@@ -1,0 +1,130 @@
+.homePart1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.part1Info {
+  margin-left: 80px;
+  margin-top: -100px;
+}
+.part1Info > h1 {
+  font-size: 40px;
+  line-height: 54px;
+  color: #25265e;
+  font-weight: bold;
+}
+.part1Info > p {
+  font-size: 20px;
+  line-height: 30px;
+  color: rgba(37, 38, 94, 0.87);
+}
+.part1Info > p > span {
+  color: #0556f3;
+}
+.imgSection {
+  margin-right: 0;
+}
+.part2Main {
+  padding: 20px 20px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.part2Info > h1 {
+  font-size: 34px;
+  line-height: 36px;
+  margin-bottom: 16px;
+  font-family: "euclid_circular_a", "Arial", "Source Sans Pro", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  margin-bottom: 0px;
+  color: #25265e;
+}
+.part2Info > p {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(37, 38, 94, 0.87);
+}
+.cardLink {
+  text-decoration: none;
+  outline: none;
+  width: 225px;
+  background-color: transparent;
+}
+.part2ProCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 30px;
+  width: 50%;
+}
+
+.cards {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 8px 12px rgba(2, 30, 84, 0.06);
+  padding: 12px 12px 12px 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  transition: all;
+  background-size: 100%;
+}
+.cards > h2 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #25265e;
+}
+.part4Container {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.part4Container > h1 {
+  font-family: "euclid_circular_a", "Arial", "Source Sans Pro", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+  color: #25265e;
+  font-size: 32px;
+  line-height: 40px;
+}
+.platformInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 80px;
+  row-gap: 30px;
+}
+.singleInfo {
+  display: flex;
+  align-items: flex-start;
+}
+
+.infoIcon {
+  width: 40px;
+  margin-right: 28px;
+  flex-shrink: 0;
+}
+
+.part4Details > h2 {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  font-family: "euclid_circular_a", "Arial", "Source Sans Pro", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+  margin: 0;
+  margin-bottom: 0px;
+  color: #25265e;
+}
+.part4Details > p {
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 238px;
+  color: rgba(37, 38, 94, 0.87);
+}
