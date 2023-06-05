@@ -97,7 +97,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -226,4 +226,18 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+/* auth part */
+input.form-control,
+input.form-control:focus {
+  background: #f0f0ff;
+}
+.labelForm {
+  font-size: 1rem;
+}
+.error {
+  position: absolute;
+  color: red;
+  font-size: 0.6rem;
 }

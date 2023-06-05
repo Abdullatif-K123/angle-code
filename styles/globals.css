@@ -12,17 +12,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-/* auth part */
-input.form-control,
-input.form-control:focus {
-  background: #f0f0ff;
-}
-.labelForm {
-  font-size: 1rem;
-}
-.error {
-  position: absolute;
-  color: red;
-  font-size: 0.6rem;
-}

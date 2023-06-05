@@ -15,7 +15,7 @@ export const TextField = ({ label, ...props }) => {
         {...props}
         autoComplete="off"
       />
-      <ErrorMessage component="div" name={field.name} className="error f-4" />
+      <ErrorMessage component="div" name={field.name} className="error f-2" />
     </div>
   );
 };

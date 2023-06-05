@@ -40,22 +40,26 @@ const Signup = () => {
       password: values.password,
       passwordConfirm: values.confirmPassword,
     };
-    dispatch(
-      login({
-        first_name: obj.first_name,
-        last_name: obj.last_name,
-        email: obj.email,
-      })
-    );
-    // try {
-    //   const response = await axios.post(
-    //     "http://localhost:3000/programlern/users/signup",
-    //     obj
-    //   );
-    //   console.log(response.data);
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:3333/AngelCode/users/signup",
+        obj
+      );
+      console.log(response.data);
+      const myData = response.data.data.user;
+      const token = response.data.token;
+      dispatch(
+        login({
+          email: myData.email,
+          first_name: myData.first_name,
+          last_name: myData.last_name,
+          userId: myData._id,
+          token: token,
+        })
+      );
+    } catch (error) {
+      console.error(error);
+    }
     resetForm();
     router.push("/");
   };

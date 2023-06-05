@@ -1,3 +1,6 @@
+.homeLoader {
+  margin: 0 auto;
+}
 .homePart1 {
   display: flex;
   justify-content: space-between;

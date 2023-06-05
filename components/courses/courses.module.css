@@ -1,0 +1,276 @@
+/* Courses Section */
+.courseLoader {
+  width: 50%;
+  margin: 0 auto;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px;
+}
+.maintext {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.maintext > h1 {
+  font-weight: bold;
+  color: #667db6; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.maintext > p {
+  font-size: 20px;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 25px;
+  row-gap: 20px;
+  padding: 40px 70px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.addCourse {
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+.btnHover {
+  width: 300px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+}
+.btnHover:hover {
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btnHover:focus {
+  outline: none;
+}
+.inputFile {
+  margin-right: 20px;
+  border: none;
+  background: #084cdf;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.inputFile:hover {
+  background: #0d45a5;
+}
+.imgSelectedText {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+.dropContainer {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  color: #444;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+.dropContainer:hover {
+  background: #eee;
+  border-color: #111;
+}
+
+.dropContainer:hover .drop-title {
+  color: #222;
+}
+
+.dropTitle {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Course Card Section */
+.media {
+  height: 0;
+  padding-top: "56.25%";
+  margin-top: "30";
+}
+.card {
+  width: 370px;
+  cursor: pointer;
+  border-radius: 5%;
+}
+.cardCourse {
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5%;
+  transition: margin-top 0.2s ease-in-out;
+}
+.cardCourse:hover {
+  margin-top: -30px !important;
+}
+.cardcontent {
+  display: flex;
+  flex-direction: column;
+}
+.cardAuthor {
+  display: flex;
+  align-items: center;
+  margin-top: -39px;
+}
+.cardAvatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+.cardAction {
+  justify-content: space-between;
+}
+.labelEdit {
+  font-size: 15px;
+  font-weight: bold;
+  color: lightslategrey;
+}
+.edit:hover {
+  background-color: transparent;
+}
+.editIcon {
+  color: lightslategrey;
+  font-size: 24px;
+}
+.edit:hover {
+  color: red;
+}
+.edit:hover > * {
+  color: red;
+}
+.cardText {
+  font-size: 27px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 20px;
+}
+.cardButton {
+  color: rgb(33, 33, 124);
+  border: 1px solid rgb(30, 30, 125);
+  background: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+/* Add course */
+
+.cardText {
+  font-weight: bold;
+  color: #0083b0;
+}
+.buttonCancel {
+  color: red;
+}
+.buttonCancel:hover {
+  background-color: red;
+  color: #fff;
+}
+.buttonSubmit:hover {
+  background-color: #0083b0;
+  color: #fff;
+}
+
+/* Delete Section */
+.delete {
+  color: red !important;
+  font-weight: bold;
+}
+.buttonDelete:hover {
+  background-color: red;
+  color: #fff;
+}
+.DialogTitle {
+  font-weight: bold;
+  color: red;
+}
+.courseNameConfirm {
+  font-weight: bold;
+  color: #000;
+}

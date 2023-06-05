@@ -12,3 +12,7 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+if (module.hot) {
+  module.hot.accept();
+}

@@ -7,6 +7,17 @@ const nextConfig = {
   basePath: "",
   distDir: "build",
   trailingSlash: true,
+  headers: () => [
+    {
+      source: "/:path*",
+      headers: [
+        {
+          key: "Cache-Control",
+          value: "no-store",
+        },
+      ],
+    },
+  ],
 };
 
 module.exports = nextConfig;

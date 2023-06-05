@@ -27,19 +27,31 @@ const Signup = () => {
       email: values.email,
       password: values.password,
     };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:3333/AngelCode/users/login",
+        obj
+      );
+      console.log(response.data);
+      const myData = response.data.data.user;
+      const token = response.data.token;
+      dispatch(
+        login({
+          email: myData.email,
+          first_name: myData.first_name,
+          last_name: myData.last_name,
+          userId: myData._id,
+          token: token,
+          role: myData.role,
+        })
+      );
+    } catch (error) {
+      console.error(error);
+    }
     resetForm();
-    // try {
-    //   const response = await axios.post(
-    //     "http://localhost:3000/programlern/users/login",
-    //     obj
-    //   );
-    //   console.log(response.data);
-    // } catch (error) {
-    //   console.error(error);
-    // }
-    dispatch(login({ email: obj.email }));
     setSubmitting(false);
-    router.push("/");
+    router.replace("/");
   };
   return (
     <div className="container mt-3">

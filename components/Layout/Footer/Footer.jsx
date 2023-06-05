@@ -1,12 +1,11 @@
 import React from "react";
 import { Container, LowerBox, MidBox, MidDiv, UpperBox } from "./FooterStyles";
 import { Button } from "@mui/material";
-
-export const Footer = () => {
+export const Footer = ({ className }) => {
   return (
-    <Container>
-      <MidDiv>
-        <UpperBox>
+    <Container className={className}>
+      <MidDiv className={className}>
+        <UpperBox className={className}>
           <svg
             width="84"
             height="26"
@@ -23,7 +22,7 @@ export const Footer = () => {
           </svg>
           <p>Learn with fun and intractive way</p>
         </UpperBox>
-        <MidBox>
+        <MidBox className={className}>
           <div className="first">
             <p className="head">Courses</p>
             <p>Python 3 Course</p>
@@ -60,7 +59,7 @@ export const Footer = () => {
             <Button variant="contained">Join now for free</Button>
           </div>
         </MidBox>
-        <LowerBox>
+        <LowerBox className={className}>
           <div>
             <div>
               <a

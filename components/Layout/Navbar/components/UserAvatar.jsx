@@ -15,10 +15,13 @@ import notification from "../../../../assets/svg/notification.svg";
 import chat from "../../../../assets/svg/chat.svg";
 import classes from "../Navbar.module.css";
 import { useState } from "react";
-import AddIcon from "@mui/icons-material/Add";
+import AddIcon from "@mui/icons-material/EventOutlined";
 import { logoutUser } from "../../../../redux/userSlice";
 import Image from "next/image";
+import MenuBookIcon from "@mui/icons-material/BookmarkAddOutlined";
+import { useRouter } from "next/router";
 const UserAvatar = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -121,6 +124,13 @@ const UserAvatar = () => {
         </MenuItem>
 
         <Divider />
+        <MenuItem
+          onClick={() => {
+            router.push("/mycourses");
+          }}
+        >
+          <MenuBookIcon /> My Courses
+        </MenuItem>
         <MenuItem>
           <AddIcon /> New Meetings
         </MenuItem>
@@ -135,6 +145,7 @@ const UserAvatar = () => {
         <MenuItem
           onClick={() => {
             dispatch(logoutUser({ email: "" }));
+            router.replace("/");
             console.log(user);
             // localStorage.removeItem("educativeUser");
             // dispatch(loginUser(null));
