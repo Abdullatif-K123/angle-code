@@ -1,0 +1,120 @@
+.lessonPreviewMain {
+  display: flex;
+  justify-content: center;
+}
+.sideBarLeft {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 4px 10px;
+  background-color: #fafafa;
+}
+.sideBarButton {
+  color: #000;
+  width: 100%;
+  font-weight: bold;
+}
+.progressBar > p {
+  font-weight: bold;
+  font-size: 15px;
+}
+.currentLesson {
+  display: flex;
+  justify-content: space-around;
+}
+.currentLesson > h4 {
+  font-weight: bold;
+  color: green;
+}
+
+/* Right Side */
+.lessonRight {
+  width: 80%;
+  background-color: #fff;
+  padding: 10px 30px;
+}
+.lessonRight > h1 {
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 0;
+  color: #295c8f;
+}
+.content {
+  padding: 20px 0;
+}
+.testForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+.testQuestion {
+  padding: 30px 40px;
+  background-color: #eef2ff;
+  text-align: center;
+}
+.testQuestion > h3 {
+  color: #4b5563;
+  font-weight: bold;
+  font-size: 23px;
+}
+.testAnswer {
+  background-color: #fff;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.testOption {
+  background-color: #f3f4f6;
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+.testOption:hover {
+  background-color: #dbdee4;
+}
+.testOption > p {
+  margin-bottom: 0 !important;
+  font-weight: bold;
+  color: #4b5563;
+}
+.selectedOption {
+  background-color: #295c8f;
+}
+.selectedOption > p {
+  color: #fff;
+}
+.selectedOption:hover {
+  background-color: #295c8f !important;
+}
+.submitButton {
+  font-weight: bold;
+  width: 100%;
+  padding: 15px 30px;
+}
+.notChoose:hover {
+  background-color: #f3f4f6 !important;
+  cursor: auto;
+}
+
+.optionCorrect {
+  background-color: green !important;
+}
+.optionCorrect > p {
+  color: #fff;
+}
+.optionCorrect:hover {
+  background-color: green !important;
+}
+.optionFault {
+  background-color: red !important;
+}
+.optionFault:hover {
+  background-color: red !important;
+}

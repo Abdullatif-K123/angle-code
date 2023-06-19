@@ -68,7 +68,7 @@ const Signup = () => {
             validationSchema={validate}
             onSubmit={handleSubmit}
           >
-            {({ isSubmitting, isValid, touched }) => (
+            {({ isSubmitting, isValid }) => (
               <div>
                 <h1 className="my-4 font-weight-bold .display-4">Sign In</h1>
                 <Form>
@@ -78,11 +78,7 @@ const Signup = () => {
                     <Button
                       variant="contained"
                       type="submit"
-                      disabled={
-                        isSubmitting ||
-                        !isValid ||
-                        (!touched.email && !touched.password)
-                      }
+                      disabled={isSubmitting || !isValid}
                     >
                       Login
                     </Button>

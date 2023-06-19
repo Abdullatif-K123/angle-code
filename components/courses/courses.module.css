@@ -274,3 +274,28 @@
   font-weight: bold;
   color: #000;
 }
+
+/* No course Page */
+.noCourse {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.noCourse > h2 {
+  color: #000;
+  margin-bottom: 0.4em;
+}
+
+.noCourse > p {
+  color: #000;
+  margin-top: 0;
+  padding-bottom: 7px;
+}
+
+.image2 {
+  width: 450px;
+}

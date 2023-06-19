@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import classes from "../home.module.css";
+import Typewriter from "./TypeWriter";
 const Part1 = () => {
   const router = useRouter();
   return (
@@ -19,6 +20,10 @@ const Part1 = () => {
           examples,
           <br /> write code and learn to program.{" "}
         </p>
+        <div className={classes.typeWriter}>
+          <Typewriter />
+        </div>
+        <br />
         <Button
           onClick={() => {
             router.push("/courses?course=all");

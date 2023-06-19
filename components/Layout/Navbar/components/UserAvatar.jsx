@@ -11,8 +11,10 @@ import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import avatar from "../../../../assets/svg/avatar.svg";
-import notification from "../../../../assets/svg/notification.svg";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import NotificationsActiveRoundedIcon from "@mui/icons-material/NotificationsActiveRounded";
 import chat from "../../../../assets/svg/chat.svg";
+import ForumIcon from "@mui/icons-material/Forum";
 import classes from "../Navbar.module.css";
 import { useState } from "react";
 import AddIcon from "@mui/icons-material/EventOutlined";
@@ -20,6 +22,7 @@ import { logoutUser } from "../../../../redux/userSlice";
 import Image from "next/image";
 import MenuBookIcon from "@mui/icons-material/BookmarkAddOutlined";
 import { useRouter } from "next/router";
+import Badge from "@mui/material/Badge";
 const UserAvatar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -36,22 +39,16 @@ const UserAvatar = () => {
     <>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="notification">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 1 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
+          <Badge
+            badgeContent={4}
+            color="primary"
+            anchorOrigin={{ vertical: "top", horizontal: "right" }}
           >
-            <Image
-              src={notification}
-              alt="Notification pic"
-              width={40}
-              height={40}
-              className={classes.user}
+            <NotificationsActiveRoundedIcon
+              className={classes.notificationUser}
+              style={{ fontSize: "30px", marginTop: "-1px" }}
             />
-          </IconButton>
+          </Badge>
         </Tooltip>
         <Tooltip title="Messages">
           <IconButton
@@ -62,13 +59,7 @@ const UserAvatar = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Image
-              src={chat}
-              alt="Picture of something"
-              width={40}
-              height={40}
-              className={classes.user}
-            />
+            <ForumIcon className={classes.user} style={{ fontSize: "30px" }} />
           </IconButton>
         </Tooltip>
         <Tooltip title="Account settings">

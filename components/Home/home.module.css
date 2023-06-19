@@ -11,9 +11,9 @@
   margin-top: -100px;
 }
 .part1Info > h1 {
-  font-size: 40px;
+  font-size: 50px;
   line-height: 54px;
-  color: #25265e;
+  color: #2e2e40;
   font-weight: bold;
 }
 .part1Info > p {
@@ -26,6 +26,11 @@
 }
 .imgSection {
   margin-right: 0;
+}
+.typeWriter {
+  font-size: 24px;
+  color: #202033;
+  font-weight: bold;
 }
 .part2Main {
   padding: 20px 20px;
@@ -81,6 +86,27 @@
   line-height: 24px;
   color: #25265e;
 }
+
+/* Part3 Secation */
+.P3MainSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  row-gap: 40px;
+  background-color: #efeffa;
+}
+.P3MainText > h2 {
+  font-weight: bold;
+  font-size: 35px;
+  color: #2e2e40;
+}
+.coursesP3 {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 25px;
+}
 .part4Container {
   margin: 100px 0;
   display: flex;
@@ -130,4 +156,73 @@
   line-height: 24px;
   max-width: 238px;
   color: rgba(37, 38, 94, 0.87);
+}
+
+/* Course Card Section */
+.media {
+  height: 0;
+  padding-top: "56.25%";
+  margin-top: "30";
+}
+
+.cardCourse {
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: margin-top 0.5s ease-in-out;
+}
+.cardCourse:hover {
+  margin-top: -20px !important;
+}
+.cardcontent {
+  display: flex;
+  flex-direction: column;
+}
+.cardAuthor {
+  display: flex;
+  align-items: center;
+  margin-top: -39px;
+}
+.cardAvatar {
+  width: 32px;
+  height: 32px;
+  margin-right: 5px;
+}
+.cardAction {
+  display: flex;
+  justify-content: flex-end;
+}
+.labelEdit {
+  font-size: 15px;
+  font-weight: bold;
+  color: lightslategrey;
+}
+.edit:hover {
+  background-color: transparent;
+}
+.editIcon {
+  color: lightslategrey;
+  font-size: 24px;
+}
+.edit:hover {
+  color: red;
+}
+.edit:hover > * {
+  color: red;
+}
+.cardText {
+  font-size: 27px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 20px;
+  color: #202033 !important;
+}
+.cardButton {
+  color: #202033;
+  font-weight: bold;
+  border: 1px solid rgb(30, 30, 125);
+  background: none;
+  padding: 5px 10px;
 }

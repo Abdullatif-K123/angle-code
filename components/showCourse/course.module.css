@@ -1,0 +1,58 @@
+.courseHead {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 200px;
+  background-color: #032341;
+  color: #fff;
+}
+.textbeg {
+  color: #a7abb4;
+  font-weight: bold;
+  font-size: 18px;
+}
+.mainTextHead > h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+.moreInfo {
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+.courseDescription {
+  padding: 30px 200px;
+  text-align: justify;
+  padding-right: 400px;
+  background-color: #eef7ff;
+}
+
+.courseDescription > h3 {
+  font-weight: bold;
+  font-size: 35px;
+  color: #2e2e40;
+}
+.courseDescription > p {
+  font-size: 20px;
+}
+
+.courseContent {
+  padding: 30px 200px;
+}
+.cardSide {
+  position: absolute;
+  right: 60px;
+  top: 15%;
+  z-index: 998;
+}
+.cardTextHead {
+  text-align: center;
+  margin: 0;
+}
+.cardAction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 5px;
+}

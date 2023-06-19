@@ -1,0 +1,316 @@
+/* Lesson Main */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20 0px;
+}
+.lessonLoader {
+  width: 50%;
+  margin: 0 auto;
+}
+.mainText {
+  margin: auto;
+  text-align: center;
+  padding: 35px 0;
+}
+.mainText > h2 {
+  font-weight: bold;
+  color: #0d487f;
+  font-size: 40px;
+}
+.mainText > p {
+  font-size: 23px;
+}
+/* Lesson section */
+.lessonMain {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.lessonSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  width: 100%;
+}
+.lessonSection > h4 {
+  font-weight: bold;
+  color: #0e3458;
+  text-align: center;
+  margin: 0 auto;
+  flex: 0.5;
+  margin-right: 40px;
+}
+.lessonArrange {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+
+/* lesson level */
+.cardLink {
+  text-decoration: none;
+  outline: none;
+  width: 225px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cards {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 8px 12px rgba(2, 30, 84, 0.06);
+  padding: 10px 10px 10px 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  transition: all;
+  background-size: 100%;
+}
+.cards:hover {
+  box-shadow: 0px 8px 12px rgba(16, 74, 192, 0.267);
+}
+.cards > h2 {
+  font-size: 16px;
+  line-height: 24px;
+  color: #25265e;
+}
+
+/* UI Buttons */
+
+.wrap {
+  margin-top: 20px;
+  padding: 100px 0;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  min-width: 200px;
+  min-height: 50px;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #fff;
+  background: #56ccf2; /* fallback for old browsers */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+
+.button::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: calc(200px + 12px);
+  min-height: calc(50px + 12px);
+  border: 8px solid #56ccf2;
+  box-shadow: 0 0 60px rgba(28, 175, 243, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(-6px);
+}
+
+.button:hover::before,
+.button:focus::before {
+  opacity: 1;
+}
+
+.button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #56ccf2;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.button:hover::after {
+  animation: none;
+  display: none;
+}
+.icon {
+  font-size: 25px;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
+/* Dialog Lesson Control */
+.lessonTitle {
+  font-weight: bold;
+  color: #0d487f;
+}
+.DeleteDialgoOpen {
+  font-weight: bold;
+  color: red !important;
+}
+.secondary {
+  color: red !important;
+}
+
+/* Dialog Delete Control */
+.DialogTitle {
+  font-weight: bold;
+  color: red;
+}
+.LessonConfirmation {
+  font-weight: bold;
+  color: #000;
+}
+
+.buttonDelete:hover {
+  background-color: red;
+  color: #fff;
+}
+
+/* DELETE lesson confirm */
+.mainDeleteTitle {
+  font-weight: bold;
+  color: rgb(189, 0, 0);
+}
+.buttonDeleteConfirm {
+  color: red;
+}
+.buttonDeleteConfirm:hover {
+  color: #fff;
+  background-color: red;
+}
+.buttonCancleConfirm:hover {
+  color: #fff;
+  background-color: #0d487f;
+}
+
+/* ADD & UPDATE TEST LESSON */
+.mainTextAddTest {
+  font-weight: bold;
+  font-size: 23px;
+  color: #0c5295;
+}
+
+/* Edit lesson Page with content */
+.mainEditLesson {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 0;
+  row-gap: 25px;
+}
+.mainEditLesson > p {
+  font-size: 27px;
+  font-weight: bold;
+  text-align: center;
+  color: #0c5295;
+}
+
+.lessonNameInput {
+  color: #fff;
+  border-color: #0c5295 !important;
+}
+.buttonLessonEdit {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 20%;
+}
+.buttonHoverover {
+  background-color: #0c5295;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+.buttonHoverover::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.buttonHoverover:hover {
+  box-shadow: 0 0 10px #0c5295, 0 0 20px #0c5295, 0 0 30px #0c5295;
+  background-color: #0c5295;
+}
+
+.buttonCancelHover {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.buttonCancelHover::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.buttonCancelHover:hover {
+  box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+  background-color: red;
+}

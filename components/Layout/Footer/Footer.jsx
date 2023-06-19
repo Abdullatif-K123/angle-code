@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, LowerBox, MidBox, MidDiv, UpperBox } from "./FooterStyles";
 import { Button } from "@mui/material";
+import classes from "./footer.module.css";
 export const Footer = ({ className }) => {
   return (
-    <Container className={className}>
+    <div className={classes.container}>
       <MidDiv className={className}>
         <UpperBox className={className}>
           <svg
@@ -179,6 +180,6 @@ export const Footer = ({ className }) => {
           </div>
         </LowerBox>
       </MidDiv>
-    </Container>
+    </div>
   );
 };

@@ -12,3 +12,112 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.text-editor {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.menu-bar {
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button.is-active {
+  background-color: rgb(185, 183, 183) !important;
+  padding: 2px 3px;
+  border-radius: 5px;
+}
+.is-active1 {
+  background-color: rgb(219, 219, 219) !important;
+  font-weight: bold;
+}
+.is-active2 {
+  background-color: rgb(219, 219, 219) !important;
+  font-weight: bold;
+}
+.is-active3 {
+  background-color: rgb(219, 219, 219) !important;
+  font-weight: bold;
+}
+.is-active4 {
+  background-color: rgb(219, 219, 219) !important;
+  font-weight: bold;
+}
+.is-active5 {
+  background-color: rgb(219, 219, 219) !important;
+  font-weight: bold;
+}
+.is-active6 {
+  background-color: rgb(219, 219, 219) !important;
+  font-weight: bold;
+}
+.menu-bar button {
+  font-size: 18px;
+  margin: 7px;
+  margin-right: 15px;
+  outline: none;
+  border: none;
+  background: none;
+  color: rgb(70, 70, 70);
+  cursor: pointer;
+}
+
+.ProseMirror {
+  padding: 10px;
+  border-top: 1px solid gray;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  min-height: 200px;
+}
+.ProseMirror > * + * {
+  margin-top: 0.75em;
+}
+.ProseMirror ul,
+.ProseMirror ol {
+  padding: 0 1rem;
+}
+
+.ProseMirror h1,
+.ProseMirror h2,
+.ProseMirror h3,
+.ProseMirror h4,
+.ProseMirror h5,
+.ProseMirror h6 {
+  line-height: 1.1;
+}
+
+.ProseMirror code {
+  background-color: #cfcfcf;
+  color: #616161;
+}
+
+.ProseMirror pre {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: "JetBrainsMono", monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+.ProseMirror pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+
+.ProseMirror img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ProseMirror blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid #9c9c9c;
+}
+
+.ProseMirror hr {
+  border: none;
+  border-top: 2px solid #9c9c9c;
+  margin: 2rem 0;
+}

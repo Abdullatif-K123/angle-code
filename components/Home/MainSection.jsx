@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classes from "./home.module.css";
 import Part1 from "./components/Part1";
 import Part2 from "./components/Part2";
+import Part3 from "./components/Part3";
 import Part4 from "./components/Part4";
 import { useSelector } from "react-redux";
 import HeadBodyGrid from "../loader/HomeLoader";
@@ -26,6 +27,7 @@ const MainSection = () => {
     <div className={classes.home}>
       <Part1 />
       <Part2 />
+      <Part3 />
       <Part4 />
     </div>
   );

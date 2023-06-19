@@ -49,14 +49,16 @@ const CourseCard = (props) => {
           </Typography>
         </CardContent>
         <CardActions className={classes.cardAction}>
-          <EditingCard
-            courseId={props.courseId}
-            userToken={props.userToken}
-            handleDelete={props.handleDelete}
-            timerWaiting={props.timerWaiting}
-            courseName={props.courseName}
-            updateCourse={props.updateCourse}
-          />
+          {props.role === "admin" && (
+            <EditingCard
+              courseId={props.courseId}
+              userToken={props.userToken}
+              handleDelete={props.handleDelete}
+              timerWaiting={props.timerWaiting}
+              courseName={props.courseName}
+              updateCourse={props.updateCourse}
+            />
+          )}
           <Button
             size="small"
             endIcon={<ArrowForwardIosOutlined />}

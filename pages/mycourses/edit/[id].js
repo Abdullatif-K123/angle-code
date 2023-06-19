@@ -1,10 +1,10 @@
 import React from "react";
 import { useRouter } from "next/router";
-import EditCourse from "../../../components/courses/components/EditCourse";
+import Lesson from "../../../components/lesson/Lesson";
 const EditCourses = () => {
   const router = useRouter();
   const { id } = router.query;
-  return <EditCourse courseId={id} />;
+  return <Lesson courseId={id} />;
 };
 
 export default EditCourses;
