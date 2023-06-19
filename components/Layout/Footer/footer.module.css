@@ -44,6 +44,13 @@
   font-size: 15px;
   margin-top: 2em;
 }
+.first {
+  color: #8da9b3 !important;
+}
+.first > p:hover {
+  color: white;
+  cursor: pointer;
+}
 .midBox > p {
   color: #8da9b3;
   font-size: 14px;

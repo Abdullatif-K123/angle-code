@@ -1,0 +1,73 @@
+/* Head Section */
+.BrowseMain {
+}
+.headMain {
+  padding: 30px 120px 0 120px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.headMain > h1 {
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #000;
+  font-size: 45px;
+  padding: 0 0 5px 0;
+}
+.searchSection {
+  display: flex;
+}
+.searchSection > input {
+  padding: 10px 10px;
+  width: 80%;
+  outline: none;
+}
+.searchSection > input:focus {
+  border-color: #5553ff;
+}
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background-color: #5553ff;
+  cursor: pointer;
+  color: #fff !important;
+  font-weight: bold;
+}
+.searchIcon > p {
+  margin-bottom: 0 !important;
+}
+
+.multiChoices {
+  display: flex;
+  align-items: center;
+  column-gap: 235px;
+  margin-top: 40px;
+}
+.section {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  cursor: pointer;
+  column-gap: 8px;
+}
+.choiceCurrent {
+  border-bottom: 2px solid blue;
+}
+.iconMulti {
+}
+.section > p {
+  margin-bottom: 0;
+}
+/*  Course Cards */
+.courseCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 50px;
+  row-gap: 30px;
+  column-gap: 25px;
+}

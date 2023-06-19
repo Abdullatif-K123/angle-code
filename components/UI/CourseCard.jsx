@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, memo } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-
+import classes from "../Home/home.module.css";
 import {
   Card,
   CardContent,
@@ -16,7 +16,7 @@ const CourseCard = (props) => {
   const router = useRouter();
   return (
     <Card
-      className={props.classes.cardCourse}
+      className={classes.cardCourse}
       onClick={() => {
         router.push({
           pathname: `/courses/${props.courseId}`,
@@ -30,33 +30,33 @@ const CourseCard = (props) => {
         src={require(`../../../5theyear/img/${props.courseImage}`)}
         alt="courseImage"
       />
-      <CardContent className={props.classes.cardcontent}>
+      <CardContent className={classes.cardcontent}>
         <Typography
           gutterBottom
           variant="h6"
           component="div"
-          className={props.classes.cardAuthor}
+          className={classes.cardAuthor}
         >
           <Avatar
             alt={props.courseAuthor}
             src={props.authorAvatar}
-            className={props.classes.cardAvatar}
+            className={classes.cardAvatar}
           />
           {props.courseAuthor}
         </Typography>
         <Typography
           variant="h4"
           color="text.secondary"
-          className={props.classes.cardText}
+          className={classes.cardText}
         >
           {props.courseName}
         </Typography>
       </CardContent>
-      <CardActions className={props.classes.cardAction}>
+      <CardActions className={classes.cardAction}>
         <Button
           size="small"
           endIcon={<ArrowForwardIosOutlined />}
-          className={props.classes.cardButton}
+          className={classes.cardButton}
         >
           Get Started
         </Button>
@@ -65,4 +65,4 @@ const CourseCard = (props) => {
   );
 };
 
-export default CourseCard;
+export default memo(CourseCard);

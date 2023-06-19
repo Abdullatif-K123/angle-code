@@ -27,6 +27,7 @@ const Courses = () => {
   const [courseImg, setCourseImg] = useState(null);
   const courseName = useRef(null);
   const courseDesc = useRef(null);
+  const courseRequirment = useRef(null);
   const [data, setData] = useState(null);
   const [timerWaiting, setTimerWaiting] = useState(false);
   const [open, setOpen] = useState(false);
@@ -229,6 +230,15 @@ const Courses = () => {
                   fullWidth
                   required
                 />
+                <TextField
+                  autoFocus
+                  margin="dense"
+                  id="requirment"
+                  label="Course requirment"
+                  type="text"
+                  inputRef={courseRequirment}
+                  fullWidth
+                />
                 <label
                   for="images"
                   className={classes.dropContainer}
@@ -286,6 +296,8 @@ const Courses = () => {
       </section>
     );
   }
+
+  // Course Found
   return (
     <>
       <div className={classes.main}>
@@ -370,6 +382,19 @@ const Courses = () => {
                   fullWidth
                   required
                 />
+                <label for="requirment" className={classes.requirment}>
+                  For example: javascript, php, python, algorithm
+                </label>
+                <TextField
+                  autoFocus
+                  margin="dense"
+                  id="requirment"
+                  label="Course requirment"
+                  type="text"
+                  inputRef={courseRequirment}
+                  fullWidth
+                />
+
                 <label
                   for="images"
                   className={classes.dropContainer}

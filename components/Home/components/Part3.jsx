@@ -6,7 +6,9 @@ import { Button } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { addCourses } from "../../../redux/courseSlice";
+import { useRouter } from "next/router";
 const Part3 = () => {
+  const router = useRouter();
   const course = useSelector((state) => state.course.courses);
   console.log(course);
   const dispatch = useDispatch();
@@ -54,7 +56,14 @@ const Part3 = () => {
           }
         })}
       </div>
-      <Button variant="contained" color="primary" endIcon={<ArrowForward />}>
+      <Button
+        variant="contained"
+        color="primary"
+        endIcon={<ArrowForward />}
+        onClick={() => {
+          router.push("/courses/course/all");
+        }}
+      >
         Browse all course
       </Button>
     </div>

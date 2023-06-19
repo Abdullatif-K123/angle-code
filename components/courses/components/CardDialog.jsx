@@ -12,17 +12,17 @@ import {
 } from "@mui/material";
 import { EditNote } from "@mui/icons-material";
 import classes from "../courses.module.css";
-import { useSelector } from "react-redux";
 import axios from "axios";
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 const CardDialog = (props) => {
-  const user = useSelector((state) => state.user.user);
   const [courseImg, setCourseImg] = useState(null);
   const courseName = useRef(null);
   const courseDesc = useRef(null);
+
+  const courseRequirment = useRef(null);
 
   var headers = {
     Authorization: `Bearer ${props.userToken}`,
@@ -136,6 +136,18 @@ const CardDialog = (props) => {
               label="Course Description"
               type="text"
               inputRef={courseDesc}
+              fullWidth
+            />
+            <label for="requirment" className={classes.requirment}>
+              For example: javascript, php, python, algorithm
+            </label>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="requirment"
+              label="Course requirment"
+              type="text"
+              inputRef={courseRequirment}
               fullWidth
             />
             <label

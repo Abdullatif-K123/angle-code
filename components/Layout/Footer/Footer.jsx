@@ -5,8 +5,8 @@ import classes from "./footer.module.css";
 export const Footer = ({ className }) => {
   return (
     <div className={classes.container}>
-      <MidDiv className={className}>
-        <UpperBox className={className}>
+      <div className={classes.midDiv}>
+        <div className={classes.upperBox}>
           <svg
             width="84"
             height="26"
@@ -22,10 +22,10 @@ export const Footer = ({ className }) => {
             />
           </svg>
           <p>Learn with fun and intractive way</p>
-        </UpperBox>
-        <MidBox className={className}>
-          <div className="first">
-            <p className="head">Courses</p>
+        </div>
+        <div className={classes.midBox}>
+          <div className={classes.first}>
+            <p className={classes.head}>Courses</p>
             <p>Python 3 Course</p>
             <p>SQL Course</p>
             <p>HTML Course</p>
@@ -35,16 +35,16 @@ export const Footer = ({ className }) => {
             <p>C# Course</p>
             <p>Algorithm Course</p>
           </div>
-          <div className="second">
-            <p className="head">Our Services</p>
+          <div className={classes.first}>
+            <p className={classes.head}>Our Services</p>
             <p>Educational Blog</p>
             <p>Meetings Platform</p>
             <p>Testings & Exams</p>
             <p>Messagin with friends</p>
             <p>Challenging with colleague</p>
           </div>
-          <div className="third">
-            <p className="head">More</p>
+          <div className={classes.first}>
+            <p className={classes.head}>More</p>
             <p>About the team</p>
             <p>Course Catalog</p>
             <p>
@@ -55,12 +55,12 @@ export const Footer = ({ className }) => {
             <p>CodingInterview.com</p>
             <p>Contact Us</p>
           </div>
-          <div className="fourth">
-            <p className="head">you want to join?</p>
+          <div className={classes.first}>
+            <p className={classes.head}>you want to join?</p>
             <Button variant="contained">Join now for free</Button>
           </div>
-        </MidBox>
-        <LowerBox className={className}>
+        </div>
+        <LowerBox className={classes.lowerBox}>
           <div>
             <div>
               <a
@@ -179,7 +179,7 @@ export const Footer = ({ className }) => {
             &nbsp;
           </div>
         </LowerBox>
-      </MidDiv>
+      </div>
     </div>
   );
 };
