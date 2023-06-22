@@ -7,6 +7,7 @@ import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import CreditCardOffOutlinedIcon from "@mui/icons-material/CreditCardOffOutlined";
 import CourseCard from "../UI/CourseCard";
+import Notfound from "./components/Notfound";
 const BrowseAll = () => {
   const courses = useSelector((state) => state.course.courses);
 
@@ -27,12 +28,23 @@ const BrowseAll = () => {
   };
   useEffect(() => {
     if (inputKey) {
-      const filtering = courses.filter((course) => {
-        return course.name.toLowerCase().includes(inputKey);
-      });
-      console.log(filtering);
-      setShowCourse(filtering);
-    } else setShowCourse(courses);
+      if (selectedSec === 1) {
+        const filtering = courses.filter((course) => {
+          return course.name.toLowerCase().includes(inputKey);
+        });
+        console.log(filtering);
+        setShowCourse(filtering);
+      } else if (selectedSec === 3) {
+        const filtering = courses.slice(-6).filter((course) => {
+          return course.name.toLowerCase().includes(inputKey);
+        });
+        console.log(filtering);
+        setShowCourse(filtering);
+      }
+    } else {
+      if (selectedSec === 1) setShowCourse(courses);
+      else if (selectedSec === 3) setShowCourse(courses.slice(-6).reverse());
+    }
   }, [inputKey]);
 
   return (
@@ -101,27 +113,31 @@ const BrowseAll = () => {
         </div>
       </div>
       <div className={classes.courseCard}>
-        {showCourse.map((course) => {
-          if (course.user) {
-            var authorName =
-              course.user.first_name + " " + course.user.last_name;
-            return (
-              <CourseCard
-                key={course._id}
-                courseId={course._id}
-                courseName={course.name}
-                courseImage={
-                  course.imageCover[0] != "C"
-                    ? "Course-64760ad3ea9ad97cc435241b-1685873555144.jpeg"
-                    : course.imageCover
-                }
-                courseAuthor={authorName}
-                authorAvatar={course.userAvatar}
-                classes={classes}
-              />
-            );
-          }
-        })}
+        {!showCourse.length ? (
+          <Notfound />
+        ) : (
+          showCourse.map((course) => {
+            if (course.user) {
+              var authorName =
+                course.user.first_name + " " + course.user.last_name;
+              return (
+                <CourseCard
+                  key={course._id}
+                  courseId={course._id}
+                  courseName={course.name}
+                  courseImage={
+                    course.imageCover[0] != "C"
+                      ? "Course-64760ad3ea9ad97cc435241b-1685873555144.jpeg"
+                      : course.imageCover
+                  }
+                  courseAuthor={authorName}
+                  authorAvatar={course.userAvatar}
+                  classes={classes}
+                />
+              );
+            }
+          })
+        )}
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ import Slide from "@mui/material/Slide";
 import CardDialog from "./CardDialog";
 import axios from "axios";
 import { useRouter } from "next/router";
+import QuizIcon from "@mui/icons-material/Quiz";
 import { Router } from "next/router";
 const StyledMenu = styled((props) => (
   <Menu
@@ -162,6 +163,15 @@ const EditingCard = (props) => {
         >
           <EditIcon />
           Edit lessons
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            router.push(`/mycourses/edit/exams/${props.courseId}`);
+          }}
+          disableRipple
+        >
+          <QuizIcon />
+          Edit exams
         </MenuItem>
         <MenuItem onClick={handleOpenCardUpdate} disableRipple>
           <FileCopyIcon />

@@ -71,3 +71,16 @@
   row-gap: 30px;
   column-gap: 25px;
 }
+/* Not found */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.notFound > h3 {
+  font-weight: bold;
+}
+.notFound > p {
+  font-weight: bold;
+}

@@ -26,7 +26,7 @@ const Part1 = () => {
         <br />
         <Button
           onClick={() => {
-            router.push("/courses?course=all");
+            router.push("/courses/course/all");
           }}
           variant="contained"
         >

@@ -1,0 +1,176 @@
+.testMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 50px;
+  row-gap: 15px;
+}
+.testMain > h1 {
+  font-weight: bold;
+  color: #2e2e40;
+  text-transform: uppercase;
+}
+.testMain > p {
+  margin-bottom: 0 !important;
+  text-align: justify;
+  padding: 0 290px;
+}
+
+.testMain > p > span {
+  color: #1976d2;
+  font-weight: bold;
+}
+.testBody {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  width: 100%;
+}
+.singleTest {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.singleTest > h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 20%;
+}
+.cardTest {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  row-gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.cardTest:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.titleInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.titleInfo > p {
+  margin-bottom: 0 !important;
+  font-size: 17px;
+  font-weight: bold;
+}
+.testInfo {
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+.testInfo > p {
+  margin-bottom: 0 !important;
+  text-align: justify;
+}
+.moreInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.iconInfo {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.icons {
+  color: #1976d2;
+}
+.noQuestionFound {
+  box-shadow: 0px 2px 4px rgba(221, 11, 11, 0.501) !important;
+}
+.noQuestionFound:hover {
+  box-shadow: 0 10px 20px rgba(221, 11, 11, 0.501) !important;
+}
+.iconQuestionNFound {
+  color: red;
+}
+.addButton {
+  display: flex;
+  flex-direction: column;
+  align-items: centers;
+  border-radius: 50%;
+  padding: 30px 20px;
+  box-shadow: 0px 2px 4px #1e90ff;
+}
+.addButton:hover {
+  box-shadow: 0 0 20px #1e90ff, 0 0 20px #1e90ff, 0 0 30px #1e90ff,
+    0 0 40px #1e90ff;
+}
+.addButton > p {
+  margin-bottom: 0 !important;
+  font-weight: bold;
+}
+
+/* Not found section */
+.notFoundMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notFoundMain > h3 {
+  font-weight: bold;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+/* Dialog Lesson Control */
+.lessonTitle {
+  font-weight: bold;
+  color: #0d487f;
+}
+.DeleteDialgoOpen {
+  font-weight: bold;
+  color: red !important;
+}
+.secondary {
+  color: red !important;
+}
+
+/* Dialog Delete Control */
+.DialogTitle {
+  font-weight: bold;
+  color: red;
+}
+.LessonConfirmation {
+  font-weight: bold;
+  color: #000;
+}
+
+.buttonDelete:hover {
+  background-color: red;
+  color: #fff;
+}
+
+/* DELETE lesson confirm */
+.mainDeleteTitle {
+  font-weight: bold;
+  color: rgb(189, 0, 0);
+}
+.buttonDeleteConfirm {
+  color: red;
+}
+.buttonDeleteConfirm:hover {
+  color: #fff;
+  background-color: red;
+}
+.buttonCancleConfirm:hover {
+  color: #fff;
+  background-color: #0d487f;
+}
+
+/* Waiting */
+.waitings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 70px;
+}
