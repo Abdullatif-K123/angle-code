@@ -1,10 +1,21 @@
 import React from "react";
 import classes from "../home.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import Chip from "@mui/material/Chip";
 const Cards = ({ language, avatar }) => {
+  const router = useRouter();
+  const courseName = language.split(" ")[0];
   return (
-    <Link href={"/courses"} className={classes.cardLink}>
+    <div
+      className={classes.cardLink}
+      onClick={() => {
+        router.push({
+          pathname: `/courses/course/all`,
+          query: { cName: courseName.toLowerCase() },
+        });
+      }}
+    >
       <div className={classes.cards}>
         <Image
           src={avatar}
@@ -14,7 +25,7 @@ const Cards = ({ language, avatar }) => {
         />
         <h2>{language}</h2>
       </div>
-    </Link>
+    </div>
   );
 };
 

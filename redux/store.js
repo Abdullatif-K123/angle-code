@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./userSlice";
 import courseReducer from "./courseSlice";
+import userCourseReducer from "./currentCourseSlice";
 import { createWrapper } from "next-redux-wrapper";
 
 const makeStore = () =>
@@ -8,6 +9,7 @@ const makeStore = () =>
     reducer: {
       user: userReducer,
       course: courseReducer,
+      userCourse: userCourseReducer,
     },
   });
 

@@ -27,7 +27,9 @@
   font-weight: bold;
   color: green;
 }
-
+.currentLessonUser {
+  font-weight: bold;
+}
 /* Right Side */
 .lessonRight {
   width: 80%;
@@ -48,6 +50,7 @@
 .testForm {
   display: flex;
   flex-direction: column;
+  padding: 10px 30px;
   row-gap: 5px;
 }
 .testQuestion {
@@ -96,7 +99,8 @@
 .submitButton {
   font-weight: bold;
   width: 100%;
-  padding: 15px 30px;
+  padding: 0px 45px 0px 45px;
+  margin-bottom: 40px;
 }
 .notChoose:hover {
   background-color: #f3f4f6 !important;
@@ -117,4 +121,17 @@
 }
 .optionFault:hover {
   background-color: red !important;
+}
+
+/* Not allowed */
+.notAllowedMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 90px;
+  row-gap: 40px;
+}
+.notAllowedMain > p {
+  font-weight: bold;
+  margin-bottom: 0;
 }

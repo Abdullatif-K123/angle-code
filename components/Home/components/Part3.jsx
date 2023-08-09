@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 const Part3 = () => {
   const router = useRouter();
   const course = useSelector((state) => state.course.courses);
-  console.log(course);
+
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [showData, setShowData] = useState([]);
@@ -20,7 +20,7 @@ const Part3 = () => {
         `http://localhost:3333/AngelCode/Courses`
       );
       const data = response.data;
-      console.log(data.data.courses);
+
       dispatch(addCourses({ data: data.data.courses }));
       const dataSlice = data.data.courses.slice(0, 3);
       setData(dataSlice);
@@ -37,7 +37,6 @@ const Part3 = () => {
           if (course.user) {
             var authorName =
               course.user.first_name + " " + course.user.last_name;
-            console.log(authorName);
             return (
               <CourseCard
                 key={course._id}

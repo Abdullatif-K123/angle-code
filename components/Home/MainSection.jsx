@@ -20,6 +20,9 @@ const MainSection = () => {
     return (
       <div className={classes.homeLoader}>
         <Preloader load={loader} />
+        <div className={classes.blurLoader}>
+          <Part1 />
+        </div>
       </div>
     );
   }

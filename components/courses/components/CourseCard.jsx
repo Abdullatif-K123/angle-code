@@ -23,7 +23,7 @@ const CourseCard = (props) => {
           component="img"
           height={200}
           width={370}
-          src={require(`../../../../5theyear/img/${props.courseImage}`)}
+          src={require(`../../../../AngleCode_Server/img/${props.courseImage}`)}
           alt="courseImage"
         />
         <CardContent className={classes.cardcontent}>

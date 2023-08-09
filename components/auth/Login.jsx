@@ -4,15 +4,14 @@ import { TextField } from "./components/TextField";
 import * as Yup from "yup";
 import { Button } from "@mui/material";
 import classes from "./auth.module.css";
-import contactme from "../../assets/png/contact.png";
-
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../../redux/userSlice";
 import { useRouter } from "next/router";
-
+import contactme from "../../assets/png/contact.png";
+import learning from "../../assets/webp/depositphotos_557095826-stock-photo-web-designer-modern-flat-concept.webp";
 const Signup = () => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -47,17 +46,29 @@ const Signup = () => {
           role: myData.role,
         })
       );
+      const uData = {
+        email: myData.email,
+        first_name: myData.first_name,
+        last_name: myData.last_name,
+        userId: myData._id,
+        token: token,
+        role: myData.role,
+      };
+
+      localStorage.setItem("userData", JSON.stringify(uData));
+      resetForm();
+      setSubmitting(false);
+      myData.role == "superAdmin"
+        ? router.replace("/dashboard")
+        : router.replace("/");
     } catch (error) {
       console.error(error);
     }
-    resetForm();
-    setSubmitting(false);
-    router.replace("/");
   };
   return (
-    <div className="container mt-3">
+    <div className="container mt-3" style={{ height: "100vh" }}>
       <div className="  d-flex justify-content-between">
-        <div className="col-md-5">
+        <div className={classes.formSingup}>
           <Formik
             initialValues={{
               firstName: "",
@@ -70,9 +81,17 @@ const Signup = () => {
             onSubmit={handleSubmit}
           >
             {({ isSubmitting, isValid }) => (
-              <div>
-                <h1 className="my-4 font-weight-bold .display-4">Sign In</h1>
-                <Form>
+              <div className={classes.signInContainer}>
+                <h1 className="my-4 font-weight-bold .display-4">
+                  Welcome again
+                </h1>
+                <Form
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    rowGap: "15px",
+                  }}
+                >
                   <TextField label="Email" name="email" type="email" />
                   <TextField label="password" name="password" type="password" />
                   <div className={classes.buttonSec}>
@@ -94,8 +113,8 @@ const Signup = () => {
           <Image
             src={contactme}
             alt="Home right Image"
-            width={530}
-            height={450}
+            width="600px"
+            height="600px"
             className="img-fluid justify-content-end  "
           />
         </div>

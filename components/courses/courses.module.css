@@ -209,6 +209,16 @@
   font-weight: bold;
   color: gray;
 }
+.hidden {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px 0;
+}
+.hidden > p {
+  font-weight: bold;
+  color: rgb(30, 30, 125);
+}
 .modal {
   font-size: 12px;
 }

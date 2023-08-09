@@ -7,6 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f8f8;
 }
+::selection {
+  background-color: rgba(57, 57, 57, 0.2);
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

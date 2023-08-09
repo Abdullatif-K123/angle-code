@@ -10,6 +10,8 @@ import {
   DialogTitle,
   Slide,
 } from "@mui/material";
+
+import Switch from "@mui/material/Switch";
 import { EditNote } from "@mui/icons-material";
 import classes from "../courses.module.css";
 import axios from "axios";
@@ -21,11 +23,16 @@ const CardDialog = (props) => {
   const [courseImg, setCourseImg] = useState(null);
   const courseName = useRef(null);
   const courseDesc = useRef(null);
-
+  const [checked, setChecked] = useState(false);
   const courseRequirment = useRef(null);
 
   var headers = {
     Authorization: `Bearer ${props.userToken}`,
+  };
+
+  //change switch
+  const handleChangeSwitch = () => {
+    checked ? setChecked(false) : setChecked(true);
   };
 
   // Drag and Drop Section
@@ -59,6 +66,7 @@ const CardDialog = (props) => {
     console.log("our data is the following:");
 
     const formData = new FormData();
+    formData.append("hidden", checked);
     if (courseName.current.value)
       formData.append("name", courseName.current.value);
     if (courseDesc.current.value)
@@ -150,6 +158,10 @@ const CardDialog = (props) => {
               inputRef={courseRequirment}
               fullWidth
             />
+            <div className={classes.hidden}>
+              <p>Hidden</p>
+              <Switch onChange={handleChangeSwitch} checked={checked} />
+            </div>
             <label
               for="images"
               className={classes.dropContainer}

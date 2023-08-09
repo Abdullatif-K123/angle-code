@@ -8,11 +8,11 @@ import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import CreditCardOffOutlinedIcon from "@mui/icons-material/CreditCardOffOutlined";
 import CourseCard from "../UI/CourseCard";
 import Notfound from "./components/Notfound";
-const BrowseAll = () => {
+const BrowseAll = ({ courseName }) => {
   const courses = useSelector((state) => state.course.courses);
 
   const [selectedSec, setSelectedSec] = useState(1);
-  const [inputKey, setInputKey] = useState("");
+  const [inputKey, setInputKey] = useState(courseName);
   const [showCourse, setShowCourse] = useState(courses);
   const handleSectionClick = (id) => {
     setSelectedSec(id);

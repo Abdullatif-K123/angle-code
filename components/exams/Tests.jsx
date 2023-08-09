@@ -99,8 +99,7 @@ const Tests = ({ courseId }) => {
         Build your own exams for any level you want{" "}
         <span>Beginner, Intermedaite, Advanced</span> or you can Build your
         <span> determinate level</span> to know where should your user's level,
-        and finally you can add <span>final exams</span> for this course and get
-        certification
+        and finally you can add <span>final exams</span> for this course
       </p>
       <div className={classes.testBody}>
         {!testData.length ? (
@@ -140,7 +139,7 @@ const Tests = ({ courseId }) => {
                   </div>
                   <div className={classes.testInfo}>
                     <InfoOutlinedIcon className={classes.icons} />
-                    <p>{test.about}</p>
+                    <p>{test.about.substring(0, 70)}</p>
                   </div>
                   <div className={classes.moreInfo}>
                     <div className={classes.iconInfo}>

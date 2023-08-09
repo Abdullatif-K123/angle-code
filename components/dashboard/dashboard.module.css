@@ -1,0 +1,82 @@
+/* Main Dashboard */
+.dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Side Bar */
+.sidebarMain {
+  background-color: #1e293b;
+  flex-basis: 18%;
+  height: 100vh;
+  color: #92a2b7;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 99;
+}
+
+.angleCodeLogo {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+.angleCodeLogo > p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+.sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  overflow-y: auto;
+}
+
+.labelTreeItem {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 10px;
+  padding: 15px 0;
+  transition: all 0.5s ease-in-out;
+  margin-left: 110px;
+}
+.labelTreeItem:hover {
+  color: #dfe4ed;
+}
+.singleItem {
+  transition: all 0.5s ease-in-out;
+  font-size: 20px;
+}
+.singleItem:hover {
+  color: #dfe4ed;
+}
+.styleList {
+  display: flex;
+  column-gap: 10px;
+  align-items: flex-end;
+  padding-left: 140px;
+  padding: 15px 0px 15px 140px;
+}
+.listItem {
+  display: flex;
+
+  max-width: 100%;
+}
+.listItem:hover {
+  color: #dfe4ed;
+}
+
+/* Overview Section  */
+.overViewMain {
+  background-color: #f1f5f9;
+  height: 100vh;
+  flex-basis: 82%;
+  overflow-y: auto;
+  flex: 1;
+}

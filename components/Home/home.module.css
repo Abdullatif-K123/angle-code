@@ -1,6 +1,9 @@
 .homeLoader {
   margin: 0 auto;
 }
+.blurLoader {
+  filter: blur(10px);
+}
 .homePart1 {
   display: flex;
   justify-content: space-between;
@@ -33,32 +36,50 @@
   font-weight: bold;
 }
 .part2Main {
-  padding: 20px 20px;
+  padding: 130px 10px;
   background-color: #fafafa;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+.part2Info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
 .part2Info > h1 {
-  font-size: 34px;
+  font-size: 47px;
+  font-weight: bold;
   line-height: 36px;
   margin-bottom: 16px;
   font-family: "euclid_circular_a", "Arial", "Source Sans Pro", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
   margin: 0;
   margin-bottom: 0px;
-  color: #25265e;
+  color: #2e2e40;
+}
+.part2Info > h1 > br {
+  margin-bottom: 15px;
 }
 .part2Info > p {
   font-size: 16px;
-  line-height: 24px;
-  color: rgba(37, 38, 94, 0.87);
+
+  color: rgba(15, 16, 43, 0.87);
 }
 .cardLink {
+  cursor: pointer;
   text-decoration: none;
   outline: none;
   width: 225px;
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+.cardLink:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.281) 0px 3px 10px 0px;
+}
+.cards:hover {
+  font-weight: bold !important;
 }
 .part2ProCard {
   display: flex;

@@ -1,0 +1,81 @@
+/* Overview Main */
+.overViewMain {
+  width: 82%;
+  height: 100%;
+  padding: 20px 10px;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-left: 15px;
+}
+.overViewMain > h2 {
+  font-weight: bold;
+  color: #3c485f;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  border-bottom: 1px solid #3c485f;
+}
+.overViewCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  animation: slideIn 1.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.iconAvatar {
+  color: #8664fe;
+  background-color: #8664fe;
+}
+/* Overview Card */
+.cardMain {
+  background-color: rgb(255, 255, 255);
+  padding: 10px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  font-size: 20px;
+  width: 23%;
+}
+.cardContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardContent > p {
+  margin-top: 10px;
+  color: #8d99aa;
+  font-weight: 400;
+}
+.cardAdding > p {
+  font-weight: bold;
+  font-size: 24px;
+}
+.cardMain > p {
+  font-size: 14px;
+  color: #909bac;
+  font-weight: 600;
+}
+.contentRed {
+  color: #df3d3d;
+}
+.contentGreen {
+  color: #5eb385;
+}
+/* chart Section */
+.chartSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

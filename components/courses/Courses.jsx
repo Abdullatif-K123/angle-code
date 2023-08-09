@@ -12,6 +12,8 @@ import {
   Slide,
 } from "@mui/material";
 import { AddOutlined } from "@mui/icons-material";
+
+import Switch from "@mui/material/Switch";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import ImageGrid from "../loader/CourseLoader";
@@ -31,7 +33,15 @@ const Courses = () => {
   const [data, setData] = useState(null);
   const [timerWaiting, setTimerWaiting] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const [checked, setChecked] = useState(true);
   const router = useRouter();
+
+  //change switch
+  const handleChangeSwitch = () => {
+    checked ? setChecked(false) : setChecked(true);
+  };
+
   // Drag and Drop Section
   const [dragging, setDragging] = React.useState(false);
 
@@ -64,13 +74,25 @@ const Courses = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(
-        `http://localhost:3333/AngelCode/Courses/MyCourses/${user.userId}`,
-        { headers }
-      );
-      const data = response.data;
-      console.log(data.data.courses);
-      setData(data.data.courses);
+      if (user.role !== "user") {
+        const response = await axios.get(
+          `http://localhost:3333/AngelCode/Courses/MyCourses/${user.userId}`,
+          { headers }
+        );
+        const data = response.data;
+        console.log(data.data.courses);
+        setData(data.data.courses);
+      }
+      // Enrolled Courses
+      else {
+        const userCourse = await axios.get(
+          "http://localhost:3333/AngelCode/myfav",
+          { headers }
+        );
+        const course4user = userCourse.data;
+        setData(course4user.data);
+        console.log(course4user);
+      }
     }
     fetchData();
   }, []);
@@ -103,6 +125,7 @@ const Courses = () => {
     formData.append("name", courseName.current.value);
     formData.append("description", courseDesc.current.value);
     formData.append("photo", courseImg);
+    formData.append("hidden", checked);
     formData.append("user", user.userId);
     console.log(formData);
     try {
@@ -394,7 +417,14 @@ const Courses = () => {
                   inputRef={courseRequirment}
                   fullWidth
                 />
-
+                <div className={classes.hidden}>
+                  <p>Hidden</p>
+                  <Switch
+                    value={checked}
+                    onChange={handleChangeSwitch}
+                    checked={checked}
+                  />
+                </div>
                 <label
                   for="images"
                   className={classes.dropContainer}

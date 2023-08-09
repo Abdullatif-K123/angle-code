@@ -22,7 +22,9 @@ import { logoutUser } from "../../../../redux/userSlice";
 import Image from "next/image";
 import MenuBookIcon from "@mui/icons-material/BookmarkAddOutlined";
 import { useRouter } from "next/router";
+import SpaceDashboardOutlinedIcon from "@mui/icons-material/SpaceDashboardOutlined";
 import Badge from "@mui/material/Badge";
+import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 const UserAvatar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -127,15 +129,26 @@ const UserAvatar = () => {
         </MenuItem>
 
         <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
+        {user.role === "admin" ? (
+          <MenuItem>
+            <ListItemIcon>
+              <SpaceDashboardOutlinedIcon fontSize="small" />
+            </ListItemIcon>
+            Dashboard
+          </MenuItem>
+        ) : (
+          <MenuItem>
+            <ListItemIcon>
+              <SupervisorAccountIcon fontSize="small" />
+            </ListItemIcon>
+            Become Instructor
+          </MenuItem>
+        )}
+
         <MenuItem
           onClick={() => {
             dispatch(logoutUser({ email: "" }));
+            localStorage.clear();
             router.replace("/");
             console.log(user);
             // localStorage.removeItem("educativeUser");

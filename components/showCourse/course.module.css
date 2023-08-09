@@ -1,7 +1,7 @@
 .courseHead {
   display: flex;
   flex-direction: column;
-  padding: 50px 200px;
+  padding: 50px 200px 30px 200px;
   background-color: #032341;
   color: #fff;
 }
@@ -14,7 +14,7 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 35px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .moreInfo {
   display: flex;
@@ -50,9 +50,29 @@
   text-align: center;
   margin: 0;
 }
+.priceCourse {
+  text-align: center;
+  font-size: 20.83px;
+  color: #4c4c5c;
+  font-weight: bold;
+}
+.priceCourse > span {
+  font-weight: bold;
+  font-size: 48.83px;
+}
 .cardAction {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   row-gap: 5px;
+}
+.currentLesson {
+  font-weight: bold !important;
+}
+
+/* Final Exams Button and Dialog */
+.finalExam {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
 }

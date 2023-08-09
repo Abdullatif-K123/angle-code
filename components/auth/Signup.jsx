@@ -36,13 +36,14 @@ const Signup = () => {
     const obj = {
       first_name: values.firstName,
       last_name: values.lastName,
+      user_name: values.firstName + values.lastName,
       email: values.email,
       password: values.password,
       passwordConfirm: values.confirmPassword,
     };
     try {
       const response = await axios.post(
-        "http://127.0.0.1:3333/AngelCode/users/signup",
+        "http://localhost:3333/AngelCode/users/signup",
         obj
       );
       console.log(response.data);
@@ -57,6 +58,14 @@ const Signup = () => {
           token: token,
         })
       );
+      const uData = {
+        email: myData.email,
+        first_name: myData.first_name,
+        last_name: myData.last_name,
+        userId: myData._id,
+        token: token,
+      };
+      localStorage.setItem("userData", JSON.stringify(uData));
     } catch (error) {
       console.error(error);
     }
@@ -64,9 +73,9 @@ const Signup = () => {
     router.push("/");
   };
   return (
-    <div className="container mt-3">
-      <div className=" d-flex justify-content-between">
-        <div className="col-md-5">
+    <div className="container mt-3" style={{ height: "100vh" }}>
+      <div className={classes.formDisplay}>
+        <div className={classes.formSingup}>
           <Formik
             initialValues={{
               firstName: "",
@@ -79,8 +88,8 @@ const Signup = () => {
             onSubmit={handleSubmit}
           >
             {({ isSubmitting, isValid, touched }) => (
-              <div>
-                <h1 className="my-4 font-weight-bold .display-4">Sign Up</h1>
+              <div className={classes.signInContainer}>
+                <h1 className={classes.singUP}>Sign Up</h1>
                 <Form>
                   <TextField label="First Name" name="firstName" type="text" />
                   <TextField label="last Name" name="lastName" type="text" />
