@@ -10,7 +10,8 @@ import { useRouter } from "next/router";
 const Part3 = () => {
   const router = useRouter();
   const course = useSelector((state) => state.course.courses);
-
+  console.log(course);
+  console.log("above");
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [showData, setShowData] = useState([]);
@@ -48,7 +49,7 @@ const Part3 = () => {
                     : "Course-64760ad3ea9ad97cc435241b-1685790633727.png"
                 }
                 courseAuthor={authorName}
-                authorAvatar={course.userAvatar}
+                authorAvatar={course.user.avatar}
                 classes={classes}
               />
             );

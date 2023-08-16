@@ -126,9 +126,11 @@ const BrowseAll = ({ courseName }) => {
                   courseId={course._id}
                   courseName={course.name}
                   courseImage={
-                    course.imageCover[0] != "C"
-                      ? "Course-64760ad3ea9ad97cc435241b-1685873555144.jpeg"
-                      : course.imageCover
+                    course.imageCover
+                      ? course.imageCover[0] != "C"
+                        ? "Course-64760ad3ea9ad97cc435241b-1685873555144.jpeg"
+                        : course.imageCover
+                      : "Course-64760ad3ea9ad97cc435241b-1685872445903.png"
                   }
                   courseAuthor={authorName}
                   authorAvatar={course.userAvatar}

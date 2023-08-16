@@ -25,13 +25,16 @@ const LessonPreview = (props) => {
   const lessonCourse = useSelector((state) => state.course.lessons);
 
   const courseForUser = useSelector((state) => state.userCourse.currentCourse);
+  console.log("lessonUnderMe");
   console.log(courseForUser);
+  console.log(lessonCourse);
   let progressCalculate;
   if (Object.keys(courseForUser).length)
     progressCalculate = parseInt(
-      (courseForUser.unlockedLessons.length * 100) / courseForUser.lesson.length
+      ((courseForUser.unlockedLessons.length - 1) * 100) /
+        courseForUser.lesson.length
     );
-  
+
   const [lessonData, setLessonData] = useState(null);
   const [open, setOpen] = useState(true);
   const [openIntermediate, setOpenIntermediate] = useState(true);

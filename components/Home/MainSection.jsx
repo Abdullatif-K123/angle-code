@@ -8,6 +8,7 @@ import Part5 from "./components/Part5";
 import { useSelector } from "react-redux";
 import HeadBodyGrid from "../loader/HomeLoader";
 import Preloader from "../loader/Preloader";
+import Meetingpart from "./components/Meetingpart";
 const MainSection = () => {
   const user = useSelector((state) => state.user);
   const [loader, setLoader] = useState(true);
@@ -31,8 +32,9 @@ const MainSection = () => {
     <div className={classes.home}>
       <Part1 />
       <Part2 />
-      {/* <Part5 /> */}
+      <Part5 />
       <Part3 />
+      <Meetingpart />
       <Part4 />
     </div>
   );

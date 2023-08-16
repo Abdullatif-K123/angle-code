@@ -56,14 +56,14 @@ const Quiz = ({ testId }) => {
     fetchDAta();
   }, []);
 
-  // catch the little bitch
+  // catch the cheaters
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
         // User has switched away from the tab or minimized the window
         swal({
-          title: "I catch you!!! you little piece of cake try to cheating",
-          icon: "warning",
+          title:
+            "I catch you!!! are you trying to cheat this is not acceptable in our platform",
 
           dangerMode: true,
         }).then((willTakeit) => {
@@ -77,15 +77,10 @@ const Quiz = ({ testId }) => {
         console.log("User switched back to the tab or maximized the window");
       }
     };
-    // const handleKeyDown = (event) => {
-    //   alert("you little piece of shit");
-    //   console.log(`Key pressed: ${event.key}`);
-    // };
-    // document.addEventListener("keydown", handleKeyDown);
+
     document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
-      //   document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, []);
@@ -143,10 +138,7 @@ const Quiz = ({ testId }) => {
           <div className={classes.ourLogo}>
             <Image src={ourLogo} alt="My Image" width={100} height={100} />
           </div>
-          <CountDown
-            timers={{ hours: 0, minutes: 0, seconds: 5 }}
-            setFinished={setFinished}
-          />
+          <CountDown timers={timer} setFinished={setFinished} />
         </div>
         <div className={classes.questionSection}>
           <h3>

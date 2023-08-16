@@ -11,7 +11,7 @@ import Snackbar from "@mui/material/Snackbar";
 import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
 import MuiAlert from "@mui/material/Alert";
 import Confetti from "react-confetti";
-
+import { useRouter } from "next/router";
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -22,6 +22,7 @@ function TransitionLeft(props) {
 }
 
 const Resulting = ({ scores, numQuestion, correct }) => {
+  const router = useRouter();
   const [open, setOpen] = React.useState(true);
   const [transition, setTransition] = React.useState(undefined);
   const screenWidth = window.innerWidth;
@@ -88,7 +89,9 @@ const Resulting = ({ scores, numQuestion, correct }) => {
         </div>
         <div className={classes.actions}>
           <Button
-            onClick={handleClick}
+            onClick={() => {
+              router.replace("/");
+            }}
             variant="contained"
             startIcon={<OtherHousesOutlinedIcon />}
           >

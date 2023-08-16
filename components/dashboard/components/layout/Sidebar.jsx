@@ -113,7 +113,7 @@ const Sidebar = ({ changeSelected }) => {
               }}
               label={
                 <div style={{ marginLeft: "95px", padding: "10px 0px" }}>
-                  Courses Category
+                  Pending Courses
                 </div>
               }
               className={classes.singleItem}
@@ -165,6 +165,18 @@ const Sidebar = ({ changeSelected }) => {
               className={classes.singleItem}
               onClick={() => {
                 changeSelected(8);
+              }}
+            />
+            <TreeItem
+              nodeId="105"
+              label={
+                <div style={{ marginLeft: "95px", padding: "10px 0px" }}>
+                  Become a teacher
+                </div>
+              }
+              className={classes.singleItem}
+              onClick={() => {
+                changeSelected(81);
               }}
             />
           </TreeItem>

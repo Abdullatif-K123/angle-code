@@ -74,7 +74,8 @@ const Courses = () => {
 
   useEffect(() => {
     async function fetchData() {
-      if (user.role !== "user") {
+      if (user.role === "admin") {
+        console.log(user);
         const response = await axios.get(
           `http://localhost:3333/AngelCode/Courses/MyCourses/${user.userId}`,
           { headers }

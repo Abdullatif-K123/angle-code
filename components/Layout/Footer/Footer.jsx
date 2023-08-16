@@ -1,10 +1,138 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Container, LowerBox, MidBox, MidDiv, UpperBox } from "./FooterStyles";
-import { Button } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./footer.module.css";
+import { AddOutlined } from "@mui/icons-material";
+import axios from "axios";
+import MuiAlert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import {
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Slide,
+} from "@mui/material";
 export const Footer = ({ className }) => {
+  //Dialog Become a teacher
+
+  const user = useSelector((state) => state.user.user);
+  var headers = {
+    "Content-Type": "multipart/form-data",
+    Authorization: `Bearer ${user.token}`,
+  };
+  const courseName = useRef(null);
+  const [courseImg, setCourseImg] = useState(null);
+  const [openTeacher, setOpenTeacher] = useState(false);
+  const handleClickOpenTeacher = () => {
+    setOpenTeacher(true);
+  };
+
+  const handleCloseTeacher = () => {
+    setOpenTeacher(false);
+
+    setCourseImg(null);
+    courseName.current.value = "";
+  };
+  //handle Submit Become a teacher
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="down" ref={ref} {...props} />;
+  });
+  var headers = {
+    "Content-Type": "multipart/form-data",
+    Authorization: `Bearer ${user.token}`,
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("our data is the following:");
+    console.log(courseImg);
+    const formData = new FormData();
+    formData.append("details", courseName.current.value);
+    formData.append("images", courseImg);
+    console.log(formData);
+    try {
+      const response = await axios.post(
+        "http://localhost:3333/AngelCode/CreateAd",
+        formData,
+        { headers }
+      );
+
+      handleClickSneak();
+      console.log(response.data);
+      console.log(data);
+      courseName.current.value = "";
+      setCourseImg(null);
+    } catch (error) {
+      console.log(error);
+    }
+
+    setOpenTeacher(false);
+  };
+  const handleFileChang = (e) => {
+    const file = e.target.files[0];
+    setCourseImg(file);
+    console.log(e.target.files[0]);
+  };
+
+  // Drag and Drop Section
+  const [dragging, setDragging] = React.useState(false);
+
+  const handleDragEnter = (event) => {
+    event.preventDefault();
+    setDragging(true);
+  };
+
+  const handleDragLeave = (event) => {
+    event.preventDefault();
+    setDragging(false);
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    setDragging(false);
+    const file = event.dataTransfer.files[0];
+    console.log(file);
+    setCourseImg(file);
+  };
+  //SneakBar
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+  const [opensneak, setOpensneak] = React.useState(false);
+
+  const handleClickSneak = () => {
+    setOpensneak(true);
+  };
+
+  const handleCloseSneak = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpensneak(false);
+  };
   return (
     <div className={classes.container}>
+      <Snackbar
+        open={opensneak}
+        autoHideDuration={6000}
+        onClose={handleCloseSneak}
+      >
+        <Alert
+          onClose={handleCloseSneak}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Your request has been send sucessfully
+        </Alert>
+      </Snackbar>
       <div className={classes.midDiv}>
         <div className={classes.upperBox}>
           <svg
@@ -53,7 +181,7 @@ export const Footer = ({ className }) => {
             </p>
             <p>Free trials</p>
             <p>CodingInterview.com</p>
-            <p>Contact Us</p>
+            <p onClick={handleClickOpenTeacher}>Contact Us</p>
           </div>
           <div className={classes.first}>
             <p className={classes.head}>you want to join?</p>
@@ -180,6 +308,82 @@ export const Footer = ({ className }) => {
           </div>
         </LowerBox>
       </div>
+      <Dialog
+        open={openTeacher}
+        onClose={handleCloseTeacher}
+        className={classes.mainPopup}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <div className={classes.newCourse}>
+          <DialogTitle className={classes.cardText}>Advertisments</DialogTitle>
+          <DialogContent>
+            <DialogContentText className={classes.textdesc}>
+              Wanna add a new advertisment here ?
+            </DialogContentText>
+          </DialogContent>
+          <form onSubmit={handleSubmit}>
+            <DialogContent>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Write a message"
+                type="text"
+                inputRef={courseName}
+                fullWidth
+                required
+              />
+
+              <label
+                for="images"
+                className={classes.dropContainer}
+                onDragEnter={handleDragEnter}
+                onDragLeave={handleDragLeave}
+                onDragOver={handleDragOver}
+                onDrop={handleDrop}
+                style={{
+                  border: dragging ? "2px dashed #f50057" : "2px dashed #ccc",
+                  padding: "16px",
+                }}
+              >
+                <span className={classes.dropTitle}>Drop Img here</span>
+
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleFileChang}
+                  id="createFile"
+                  style={{ display: "none" }}
+                />
+                <span
+                  className={classes.inputFile}
+                  onClick={() => document.querySelector("#createFile").click()}
+                >
+                  Select file
+                </span>
+                {courseImg && (
+                  <p className={classes.imgSelectedText}>
+                    Selected file: {courseImg.name}
+                  </p>
+                )}
+              </label>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                onClick={handleCloseTeacher}
+                className={classes.buttonCancel}
+              >
+                Cancel
+              </Button>
+              <Button type="submit" className={classes.buttonSubmit}>
+                {" "}
+                <AddOutlined /> make a Adevrtisment{" "}
+              </Button>
+            </DialogActions>
+          </form>
+        </div>
+      </Dialog>
     </div>
   );
 };

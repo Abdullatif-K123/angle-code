@@ -8,7 +8,7 @@ export const userCourses = createSlice({
   initialState: initialState,
   reducers: {
     courseUser: (state, action) => {
-      state.currentCourse = { ...action.payload.data };
+      state.currentCourse = action.payload.data;
     },
     unLockLesson: (state, action) => {
       state.currentCourse.unlockedLessons.push(action.payload.unlocklesson);

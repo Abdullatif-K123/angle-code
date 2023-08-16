@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import classes from "../home.module.css";
+
+import promo1 from "@/assets/png/promo1.png";
+import promo2 from "@/assets/png/promo2.png";
+import promo3 from "@/assets/png/chat.png";
 const DUMMY_TEXT = [
   "Interactive and amazing lessons",
   "Save Time and Money",
@@ -37,7 +41,12 @@ const Part5 = () => {
         </ul>
       </div>
       <div className={classes.imagePart5}>
-        <Image src="/image.png" alt="A sample image" width={500} height={500} />
+        <Image
+          src={greenIndex == 0 ? promo1 : greenIndex == 1 ? promo2 : promo3}
+          alt="A sample image"
+          width={720}
+          height={500}
+        />
       </div>
     </div>
   );

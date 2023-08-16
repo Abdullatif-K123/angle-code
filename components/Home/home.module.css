@@ -248,6 +248,32 @@
   padding: 5px 10px;
 }
 /* Part 5 promotion */
+.part5MainSec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+  height: 600px;
+  background-color: #dee1e3;
+}
+.textPart5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 30px;
+}
+.textPart5 > h2 {
+  margin-top: -70px;
+  font-weight: bold;
+  font-size: 34px;
+  color: #202033;
+}
+
+.texts {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 .greenText {
   color: green;
 }

@@ -3,20 +3,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
 }
 
 /* Side Bar */
 .sidebarMain {
   background-color: #1e293b;
+  position: fixed;
+  top: 0;
+  left: 0;
   flex-basis: 18%;
-  height: 100vh;
+  height: 130%;
   color: #92a2b7;
   display: flex;
   flex-direction: column;
   row-gap: 30px;
   overflow: hidden;
-  width: 100%;
+  width: 17%;
   z-index: 99;
 }
 
@@ -77,6 +79,4 @@
   background-color: #f1f5f9;
   height: 100vh;
   flex-basis: 82%;
-  overflow-y: auto;
-  flex: 1;
 }

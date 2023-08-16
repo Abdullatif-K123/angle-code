@@ -37,6 +37,9 @@ import swal from "sweetalert";
 const CourseOverview = ({ courseId }) => {
   const user = useSelector((state) => state.user.user);
 
+  const courseForUser = useSelector((state) => state.userCourse.currentCourse);
+  console.log("I'm course For User");
+  console.log(courseForUser);
   const dispatch = useDispatch();
   const router = useRouter();
   const [courseData, setCourseData] = useState(null);
@@ -129,6 +132,8 @@ const CourseOverview = ({ courseId }) => {
         const idLesson = data.lesson.map((id) => id._id);
         const obj = { unlockedLessons: idLesson, lesson: idLesson };
         dispatch(courseUser({ data: obj }));
+        console.log("I'here under");
+        console.log(obj);
         setUserCourse({ unlockedLessons: idLesson });
       }
       setCourseData(data);
@@ -150,11 +155,12 @@ const CourseOverview = ({ courseId }) => {
       console.log(data);
 
       if (user.token && !(data.user._id === user.userId)) {
+        console.log(headers);
         const responseTwo = await axios.get(
           "http://localhost:3333/AngelCode/myFavAndUnlock",
           { headers }
         );
-
+        console.log(responseTwo);
         let dataUser = responseTwo.data.data.find(
           (obj) => obj._id === data._id
         );
@@ -175,7 +181,7 @@ const CourseOverview = ({ courseId }) => {
         const idLesson = data.lesson.map((singleLesson) => singleLesson._id);
         idLesson.push("3432432432");
         setUserCourse({ unlockedLessons: idLesson });
-        dispatch(courseUser({ data: idLesson }));
+        // dispatch(courseUser({ data: idLesson }));
       } else {
         setUserCourse({ unlockedLessons: [] });
         dispatch(courseUser({}));
@@ -222,7 +228,7 @@ const CourseOverview = ({ courseId }) => {
             Course Standard
           </Typography>
           <div className={classes.priceCourse}>
-            <span>150000</span>/SYP
+            <span>Free</span>
           </div>
         </CardContent>
         {user.userId ? (

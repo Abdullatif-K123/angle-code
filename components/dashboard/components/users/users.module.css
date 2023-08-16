@@ -1,0 +1,90 @@
+/* User Intrcutor Become a teacher styling */
+
+/* Instrcutor Section */
+.userInstructorMain {
+  width: 100%;
+  margin-left: 17%;
+  height: 100vh;
+  padding: 20px 10px;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-left: 15px;
+}
+.userInstructorMain > h2 {
+  font-weight: bold;
+  color: #3c485f;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  border-bottom: 1px solid #3c485f;
+}
+.userInstructorMain > h2 > span {
+  font-size: 17px;
+}
+
+.searchSection {
+  display: flex;
+}
+.searchSection > input {
+  padding: 5px 10px;
+  width: 100%;
+  outline: none;
+}
+.searchSection > input:focus {
+  border-color: #5553ff;
+}
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 15px;
+  background-color: #5553ff;
+  cursor: pointer;
+  color: #fff !important;
+  font-weight: bold;
+}
+.searchIcon > p {
+  margin-bottom: 0 !important;
+}
+.usersContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+  grid-gap: 10px; /* Adds a gap between cards */
+}
+.userCardMain {
+  background: #fff;
+  justify-self: center;
+  width: 250px;
+  height: 320px;
+  padding: 20px 40px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.cardAvatar {
+  width: 40px;
+  height: 40px;
+}
+.userCardMain > p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3c485f;
+  border-bottom: 1px solid #3c485f;
+  width: 100%;
+  padding-bottom: 5px;
+}
+.iconEdit {
+  color: red;
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+}
+.iconEdit:hover {
+  color: #b3d4f5;
+}

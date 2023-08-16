@@ -1,6 +1,7 @@
 /* Overview Main */
 .overViewMain {
-  width: 82%;
+  width: 100%;
+  margin-left: 17%;
   height: 100%;
   padding: 20px 10px;
   background-color: #f1f5f9;
@@ -78,4 +79,120 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+/* Table Section */
+.tablesSectoin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.teacher {
+  justify-self: center;
+  align-items: center;
+  background-color: #fff;
+  width: 395px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.teacher > h2 {
+  font-size: 24px;
+
+  text-align: center;
+  border-bottom: 1px solid #5d6065;
+  padding: 20px 0;
+  background: #3c485f;
+  color: #fff;
+}
+
+.viewTableMain {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.teacherPop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3c485f;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.teacherPop:hover {
+  background: #3c485f;
+  color: #fff;
+}
+.firstSec {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+.teacherContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.teacherContent > p:nth-child(2) {
+  margin-top: -15px;
+}
+.teacherPop > p {
+  color: #5d6065;
+  font-size: 15px;
+}
+.teacherPop:hover > p {
+  color: #fff;
+}
+/* Course Table Section */
+.courses {
+  justify-self: center;
+  align-items: center;
+  background-color: #fff;
+  width: 395px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.courses > h2 {
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 1px solid #5d6065;
+  padding: 20px 0;
+  background: #3c485f;
+  color: #fff;
+}
+.coursePop {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3c485f;
+  padding: 10px 20px;
+}
+.coursePop:hover {
+  background: #3c485f;
+  color: #fff;
+}
+.firstSecs {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
+.firstSecs > p {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 16px;
+}
+.secondSec {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.cardAvatarsectwo {
+  width: 30px;
+  height: 30px;
+}
+.secondSec > p {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: bold;
 }

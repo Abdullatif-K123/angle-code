@@ -13,6 +13,8 @@ import {
 import { ArrowForwardIosOutlined } from "@mui/icons-material";
 
 const CourseCard = (props) => {
+  console.log("I'm here");
+  console.log(props);
   const router = useRouter();
   return (
     <Card
@@ -37,11 +39,27 @@ const CourseCard = (props) => {
           component="div"
           className={classes.cardAuthor}
         >
-          <Avatar
-            alt={props.courseAuthor}
-            src={props.authorAvatar}
-            className={classes.cardAvatar}
-          />
+          {props.authorAvatar ? (
+            <Image
+              className={classes.userPof}
+              style={{
+                marginRight: "8px",
+                borderRadius: "50%",
+                objectFit: "cover",
+              }}
+              width={"33"}
+              height={"33"}
+              alt={props.courseAuthor}
+              src={require(`../../../AngleCode_Server/img/${props.authorAvatar}`)}
+            />
+          ) : (
+            <Avatar
+              alt={props.courseAuthor}
+              src={props.authorAvatar}
+              className={classes.cardAvatar}
+            />
+          )}
+
           {props.courseAuthor}
         </Typography>
         <Typography

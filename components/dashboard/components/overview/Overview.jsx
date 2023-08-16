@@ -153,7 +153,7 @@ const Overview = ({ usersNum, coursesNum, lastCourse, popularTeacher }) => {
         </div>
         <div className={classes.courses}>
           <h2>Last Courses</h2>
-          <OverviewTable lastCourses={lastCourse} />
+          <OverviewTable lastCourse={lastCourse} />
         </div>
       </div>
     </div>
