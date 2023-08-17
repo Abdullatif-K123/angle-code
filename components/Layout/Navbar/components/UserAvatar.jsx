@@ -178,18 +178,7 @@ const UserAvatar = () => {
             />
           </Badge>
         </Tooltip>
-        <Tooltip title="Messages">
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 1 }}
-            aria-controls={open ? "account-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? "true" : undefined}
-          >
-            <ForumIcon className={classes.user} style={{ fontSize: "30px" }} />
-          </IconButton>
-        </Tooltip>
+
         <Tooltip title="Account settings">
           <IconButton
             onClick={handleClick}

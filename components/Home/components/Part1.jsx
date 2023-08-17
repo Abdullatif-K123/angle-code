@@ -35,7 +35,13 @@ const Part1 = () => {
       </div>
 
       <div className={classes.imgSection}>
-        <Image src={homeImg} alt="Home right Image" width={790} height={700} />
+        <Image
+          src={homeImg}
+          alt="Home right Image"
+          width={790}
+          height={700}
+          className={classes.imgMain}
+        />
       </div>
     </div>
   );

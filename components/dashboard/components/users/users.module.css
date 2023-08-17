@@ -88,3 +88,156 @@
 .iconEdit:hover {
   color: #b3d4f5;
 }
+
+/* Sytling approve Course */
+.becomeMain {
+  width: 100%;
+  margin-left: 17%;
+  height: 100%;
+  padding: 20px 10px;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-left: 15px;
+}
+.becomeMain > h2 {
+  font-weight: bold;
+  color: #3c485f;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  border-bottom: 1px solid #3c485f;
+}
+.teacherMain {
+  border: 1px solid #dce0e3;
+}
+.teacherMain {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.teacherMain > p {
+  color: #485467;
+}
+/* all Courses */
+.allCourseMain {
+  width: 100%;
+  margin-left: 17%;
+  height: 100%;
+  padding: 20px 10px;
+  background-color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-left: 15px;
+}
+.personInfo {
+  font-weight: bold;
+  color: #3c485f;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+.personInfo > p {
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+/* Tables */
+.tableView {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  padding: 20px 10px;
+  border-bottom: 1px solid #dce0e3;
+}
+.courseSection {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.contentCourse {
+  color: #343f50;
+  font-size: 15px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+}
+.teacher {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+
+  justify-self: center;
+  align-self: center;
+}
+.status {
+  text-align: center;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  column-gap: 7px;
+}
+.pending {
+  width: 10px;
+  height: 10px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.accept {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(56, 161, 105);
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.action {
+  justify-self: center;
+  align-self: center;
+}
+.reject {
+  text-align: center;
+  border: none;
+  padding: 4px 9px;
+  color: #f8f9fa;
+  border-radius: 10px;
+  background: rgb(188, 34, 34);
+  margin-right: 5px;
+}
+.reject:hover {
+  box-shadow: 0 0 10px rgba(188, 34, 34, 0.5);
+}
+.approve {
+  text-align: center;
+  border: none;
+  padding: 4px 9px;
+  color: #f8f9fa;
+  border-radius: 10px;
+  background: rgb(56, 161, 105);
+  margin-right: 5px;
+}
+.approve:hover {
+  box-shadow: 0 0 10px rgba(6, 161, 105, 0.5);
+}
+.changeStatus {
+  justify-self: center;
+  align-self: center;
+  border: none;
+  width: 120px;
+  height: 35px;
+  border-radius: 10px;
+  font-size: 13px;
+  background: #64748b;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.cardAvatar {
+  margin-bottom: 10px;
+  width: 30px;
+  height: 30px;
+}

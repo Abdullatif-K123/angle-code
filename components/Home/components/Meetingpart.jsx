@@ -23,7 +23,7 @@ const Meetingpart = () => {
   return (
     <div className={classes.P3MainSection}>
       <div className={classes.P3MainText}>
-        <h2>join</h2>
+        <h2>Meeting up Events</h2>
       </div>
       <div className={classes.coursesP3}>
         {data.map((m) => {

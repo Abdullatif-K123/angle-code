@@ -21,7 +21,7 @@ const Overview = ({ usersNum, coursesNum, lastCourse, popularTeacher }) => {
     },
     xAxis: {
       type: "category",
-      data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      data: ["Sat", "Sun", "Mon", "Tue", "Wed", "Fri", "Thu"],
     },
     yAxis: {
       type: "value",
@@ -106,7 +106,7 @@ const Overview = ({ usersNum, coursesNum, lastCourse, popularTeacher }) => {
               style={{ color: "#8664fe", width: "30px", height: "30px" }}
             />
           }
-          numUser={usersNum[0]}
+          numUser={usersNum[0] - usersNum[3]}
           newUser={usersNum[0] - 10}
           title={"Total Users"}
         />
@@ -126,8 +126,8 @@ const Overview = ({ usersNum, coursesNum, lastCourse, popularTeacher }) => {
               style={{ color: "#8664fe", width: "30px", height: "30px" }}
             />
           }
-          numUser={usersNum[0]}
-          newUser={usersNum[0] - 2}
+          numUser={usersNum[2]}
+          newUser={usersNum[2] - 2}
           title={"Instructor"}
         />
         <OverviewCards

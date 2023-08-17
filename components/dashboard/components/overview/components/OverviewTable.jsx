@@ -14,11 +14,26 @@ const OverviewTable = ({ popularTeacher, lastCourse }) => {
           return (
             <div className={classes.teacherPop} key={teacher._id}>
               <div className={classes.firstSec}>
-                <Avatar
-                  alt={teacher.first_name}
-                  src={teacher.avatar}
-                  className={classes.cardAvatar}
-                />
+                {teacher.avatar ? (
+                  <Image
+                    className={classes.userPof}
+                    style={{
+                      marginRight: "8px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
+                    width={"33"}
+                    height={"33"}
+                    alt={teacher.first_name}
+                    src={require(`../../../../../../AngleCode_Server/img/${teacher.avatar}`)}
+                  />
+                ) : (
+                  <Avatar
+                    alt={teacher.first_name}
+                    className={classes.cardAvatarsectwo}
+                  />
+                )}
+
                 <div className={classes.teacherContent}>
                   <p>
                     {teacher.first_name} {teacher.last_name}
@@ -53,11 +68,26 @@ const OverviewTable = ({ popularTeacher, lastCourse }) => {
                 <p>{course.name}</p>
               </div>
               <div className={classes.secondSec}>
-                <Avatar
-                  alt={course.user.first_name}
-                  src={course.user.avatar}
-                  className={classes.cardAvatarsectwo}
-                />
+                {course.user.avatar ? (
+                  <Image
+                    className={classes.userPof}
+                    style={{
+                      marginRight: "8px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                    }}
+                    width={"35"}
+                    height={"35"}
+                    alt={course.user.first_name}
+                    src={require(`../../../../../../AngleCode_Server/img/${course.user.avatar}`)}
+                  />
+                ) : (
+                  <Avatar
+                    alt={course.user.first_name}
+                    className={classes.cardAvatarsectwo}
+                  />
+                )}
+
                 <p>
                   {course.user.first_name} {course.user.last_name}
                 </p>

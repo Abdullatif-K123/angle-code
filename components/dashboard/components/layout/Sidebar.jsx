@@ -201,34 +201,10 @@ const Sidebar = ({ changeSelected }) => {
               <PersonAddAltOutlinedIcon
                 style={{ width: "20px", height: "20px", marginBottom: "7px" }}
               />
-              <ListItemText primary="Instructor" />
+              <ListItemText primary="Ad Reqest" />
             </ListItem>
             <Divider light />
-            <ListItem
-              button
-              divider
-              className={classes.styleList}
-              onClick={() => {
-                changeSelected(10);
-              }}
-            >
-              <AccountBalanceOutlined
-                style={{ width: "20px", height: "20px", marginBottom: "7px" }}
-              />
-              <ListItemText primary="Accounts" />
-            </ListItem>
-            <ListItem
-              button
-              className={classes.styleList}
-              onClick={() => {
-                changeSelected(11);
-              }}
-            >
-              <MailLockOutlined
-                style={{ width: "20px", height: "20px", marginBottom: "7px" }}
-              />
-              <ListItemText primary="Mails" />
-            </ListItem>
+
             <Divider light />
             <ListItem
               button

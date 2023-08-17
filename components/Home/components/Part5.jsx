@@ -46,6 +46,7 @@ const Part5 = () => {
           alt="A sample image"
           width={720}
           height={500}
+          className={classes.prodic}
         />
       </div>
     </div>

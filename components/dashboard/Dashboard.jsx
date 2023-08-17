@@ -8,6 +8,7 @@ import ApproveCourse from "./components/courses/ApproveCourse";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import DashboardLoader from "../loader/Dashboard";
+import BecomeTeacher from "./components/users/BecomeTeacher";
 import AllCourses from "./components/courses/AllCourses";
 const Dashboard = () => {
   const user = useSelector((state) => state.user.user);
@@ -95,7 +96,7 @@ const Dashboard = () => {
       {selected == 6 ? <h1>Single Course</h1> : null}
       {selected == 7 ? <Instuctor teacher={teacher} /> : null}
       {selected == 8 ? <Users student={student} /> : null}
-      {selected == 81 ? <h1>Become a teacher</h1> : null}
+      {selected == 81 ? <BecomeTeacher /> : null}
       {selected == 9 ? <h1>Add Instructor</h1> : null}
       {selected == 10 ? <h1>Accounts</h1> : null}
       {selected == 11 ? <h1>Mails</h1> : null}

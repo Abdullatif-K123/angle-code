@@ -8,7 +8,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
-
+import Image from "next/image";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
@@ -41,11 +41,23 @@ const UserCard = ({ user, title }) => {
 
   return (
     <div className={classes.userCardMain}>
-      <Avatar
-        alt={user.first_name}
-        src={user.avatar}
-        className={classes.cardAvatar}
-      />
+      {user.avatar ? (
+        <Image
+          className={classes.userPof}
+          style={{
+            marginRight: "8px",
+            borderRadius: "50%",
+            objectFit: "cover",
+          }}
+          width={"33"}
+          height={"33"}
+          alt={user.first_name}
+          src={require(`../../../../../../AngleCode_Server/img/${user.avatar}`)}
+        />
+      ) : (
+        <Avatar alt={user.first_name} className={classes.cardAvatarsectwo} />
+      )}
+
       <p>
         {user.first_name} {user.last_name}
       </p>
